@@ -59,7 +59,7 @@ const checkoutSchema = z.object({
              !!data.shippingAddress && 
              !!data.shippingCity && 
              !!data.shippingState && 
-             !!data.shippingPincode; // cspell: ignore Pincode
+             !!data.shippingPincode;
     }
     return true;
   },
@@ -514,26 +514,26 @@ export default function CheckoutPage() {
                           <div className="space-y-3">
                             <div className="flex items-center space-x-3 p-3 border rounded-lg cursor-pointer hover:bg-gray-50">
                               <CreditCard className="w-5 h-5" />
-                              <span>Credit/Debit Card</span>
+                              <div>
+                                <p className="font-medium">Credit/Debit Card</p>
+                                <p className="text-sm text-gray-500">Visa, Mastercard, Amex</p>
+                              </div>
                             </div>
                             <div className="flex items-center space-x-3 p-3 border rounded-lg cursor-pointer hover:bg-gray-50">
                               <Shield className="w-5 h-5" />
-                              <span>UPI</span>
+                              <div>
+                                <p className="font-medium">UPI</p>
+                                <p className="text-sm text-gray-500">Google Pay, PhonePe, Paytm</p>
+                              </div>
                             </div>
                           </div>
                         </div>
                         
-                        {/* Trust Badges */}
+                        {/* Security Info */}
                         <div className="mt-6 pt-6 border-t">
-                          <div className="space-y-3">
-                            <div className="flex items-center space-x-2 text-sm text-gray-600">
-                              <Shield className="w-4 h-4" />
-                              <span>Secure checkout powered by Razorpay</span>
-                            </div>
-                            <div className="flex items-center space-x-2 text-sm text-gray-600">
-                              <Truck className="w-4 h-4" />
-                              <span>Free shipping on all orders</span>
-                            </div>
+                          <div className="flex items-center space-x-2 text-sm text-gray-600">
+                            <Shield className="w-4 h-4" />
+                            <span>Your payment information is secure and encrypted</span>
                           </div>
                         </div>
                       </Card>
